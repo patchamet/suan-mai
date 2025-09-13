@@ -1,0 +1,32 @@
+Create a full Turborepo project with the following structure:
+
+apps/
+  web-main/        # Next.js (TypeScript) frontend
+  web-admin/       # Next.js (TypeScript) admin frontend
+  web-docs/        # Next.js (TypeScript) + Swagger UI/OpenAPI frontend
+  service-auth/    # NestJS (TypeScript) + GraphQL + Prisma
+  service-user/    # NestJS (TypeScript) + GraphQL + Prisma
+  service-schema/  # NestJS (TypeScript) + GraphQL + Prisma
+  service-data/    # NestJS (TypeScript) + GraphQL + Prisma
+  service-publish/ # NestJS (TypeScript) + GraphQL + Prisma + Redis caching
+  api-gateway/     # NestJS (TypeScript) + Apollo Federation Gateway
+
+packages/
+  db/              # Prisma schema + migrations
+  shared/          # shared types/interfaces/utils
+
+Requirements:
+1. Each service has example code:
+   - GraphQL resolver, DTO, and Prisma model
+   - service-publish uses Redis caching for query results
+2. Each Next.js app has example pages and calls API Gateway
+3. API Gateway federates all GraphQL services
+4. Include Dockerfile for each service and Next.js app
+5. Include docker-compose.yml that runs:
+   - Postgres
+   - Redis
+   - All NestJS services
+   - API Gateway
+   - All Next.js apps (web-main, web-admin, web-docs)
+6. The setup must be runnable locally with `docker-compose up`
+7. Include README.md with instructions
