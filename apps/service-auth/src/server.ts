@@ -10,7 +10,7 @@ export async function startServer() {
 
     const { url } = await startStandaloneServer(server, {
         context: buildContext,
-        listen: { port: 4000 },
+        listen: { port: 4100 },
     });
 
     console.log(`🚀 Auth service running at ${url}`);
