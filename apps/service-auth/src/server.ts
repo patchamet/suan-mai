@@ -8,10 +8,14 @@ export async function startServer() {
         schema,
     });
 
+    console.log("==== process.env", process.env)
+
     const { url } = await startStandaloneServer(server, {
         context: buildContext,
         listen: { port: 4100 },
     });
 
     console.log(`🚀 Auth service running at ${url}`);
+
+    return { server, url };
 }
