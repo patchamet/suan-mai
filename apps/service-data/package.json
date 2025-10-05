@@ -1,0 +1,24 @@
+{
+  "name": "service-data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "compile": "tsc",
+    "dev": "npm run compile && node ./.dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^24.3.3",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@apollo/server": "^5.0.0",
+    "@graphql-tools/schema": "^10.0.25",
+    "graphql": "^16.11.0",
+    "graphql-tag": "^2.12.6"
+  }
+}
